@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.CompanyMapper">
+<!--    通过主键id查询企业信息-->
+    <select id="findById" resultType="com.waq.employment_platform_serve.entity.Company">
+        SELECT * from company
+        <where>
+            id = #{id} AND status = '1'
+        </where>
+    </select>
+
+<!--    更新浏览人数-->
+    <update id="updateViewer">
+        update company set viewer = viewer + 1
+        where id = #{companyId}
+    </update>
+</mapper>

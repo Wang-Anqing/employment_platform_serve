@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.JobMapper">
+    <!--    通过companyId查询工作信息-->
+    <select id="findByCompanyId" resultType="com.waq.employment_platform_serve.entity.Job">
+        SELECT
+            id companyId,
+            job_id id,
+            name ,
+            duty,
+            request,
+            location,
+            account,
+            start_date startDate,
+            end_date endDate,
+            tag
+
+        from v_company_job
+        <where>
+            id = #{companyId}
+        </where>
+    </select>
+</mapper>

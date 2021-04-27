@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.RecomCardMapper">
+    <!--    查询首页推荐的海报-->
+    <select id="cardList" resultType="com.waq.employment_platform_serve.entity.webmodel.RecomCard">
+        SELECT id,
+               name,
+               des,
+               is_hot isHot,
+               is_new isNew,
+               post_src postSrc,
+               viewer
+        FROM v_company_recom_post
+    </select>
+</mapper>

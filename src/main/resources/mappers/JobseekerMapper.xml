@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.JobseekerMapper">
+<!--    通过邮箱查询-->
+    <select id="findByEmail" resultType="com.waq.employment_platform_serve.entity.Jobseeker">
+        SELECT * FROM jobseeker
+        <where>
+            email= #{email} AND status = '1'
+        </where>
+    </select>
+<!--    通过主键id查询-->
+    <select id="findById" resultType="com.waq.employment_platform_serve.entity.Jobseeker">
+        SELECT * FROM jobseeker
+        <where>
+            id= #{id} AND status = '1'
+        </where>
+    </select>
+<!--    返回全部用户列表-->
+    <select id="allJobSeeker" resultType="com.waq.employment_platform_serve.entity.Jobseeker">
+        SELECT * FROM jobseeker
+    </select>
+<!--    注册用户-->
+    <insert id="addUser">
+        insert into jobseeker(
+            email,
+            password
+        )values(
+            #{email},
+            #{password}
+                       )
+    </insert>
+</mapper>

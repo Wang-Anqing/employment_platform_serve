@@ -1,0 +1,36 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: employmentPlatformServe
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.233.131:3306/db
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+  #  邮箱配置信息
+  mail:
+    host: smtp.qq.com
+    #发送邮件者信箱
+    username: 3201084819@qq.com
+    #IMAP/SMTP服务时邮箱的密文授权码（之前保存的）
+    password: knipcmckwfdadcjj
+    default-encoding: UTF-8
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+        debug: true
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mappers/*.xml

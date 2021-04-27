@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.SwiperMapper">
+<!--    查询轮播图的图片-->
+    <select id="initSwiper" resultType="com.waq.employment_platform_serve.entity.webmodel.Swiper">
+        SELECT id ,
+               name ,
+               post_src postSrc
+        FROM v_company_swiper;
+    </select>
+</mapper>
