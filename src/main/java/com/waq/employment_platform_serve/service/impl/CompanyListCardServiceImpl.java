@@ -26,5 +26,10 @@ public class CompanyListCardServiceImpl implements CompanyListCardService {
         return companyListCardMapper.findByKeyword(keyword);
     }
 
+    @Override
+    public List<CompanyListCard> findByName(String name) {
+        return companyListCardMapper.findByName(name);
+    }
+
 
 }

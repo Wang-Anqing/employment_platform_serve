@@ -9,4 +9,6 @@ public interface CompanyListCardMapper {
     List<CompanyListCard> getList();
 //    根据关键词获取公司卡片信息
     List<CompanyListCard> findByKeyword(String keyword);
+//    根据输入的公司名称进行信息查询
+    List<CompanyListCard> findByName(String name);
 }

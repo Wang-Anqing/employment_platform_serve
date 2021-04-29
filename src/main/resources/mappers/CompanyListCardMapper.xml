@@ -13,4 +13,12 @@
             tag like concat('%',#{keyword},'%')
         </where>
     </select>
+
+<!--    根据输入的公司名称进行模糊查询-->
+    <select id="findByName" resultType="com.waq.employment_platform_serve.entity.webmodel.CompanyListCard">
+        SELECT * from v_company_list_card
+        <where>
+            name like concat('%',#{name},'%')
+        </where>
+    </select>
 </mapper>

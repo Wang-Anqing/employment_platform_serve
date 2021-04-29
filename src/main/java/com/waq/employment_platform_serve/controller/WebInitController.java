@@ -25,12 +25,13 @@ public class WebInitController {
     @Autowired
     CompanyListCardServiceImpl companyListCardService;
 
+//    初始化首页轮播图
     @GetMapping("/init/swiper")
     public List<Swiper> swiperList(){
 //        System.out.println(swiperService.initSwiper());
         return swiperService.initSwiper();
     }
-
+//    初始化首页推荐海报
     @GetMapping("/init/recomCard")
     public List<RecomCard> recomCardList(){
         System.out.println(recomCardService.cardList());
@@ -47,4 +48,9 @@ public class WebInitController {
             return companyListCardService.findByKeyword(keyword);
     }
 
+//    求职页面，根据输入的公司名称进行查找
+    @GetMapping("/search/companyListCard/{name}")
+    public List<CompanyListCard>list(@PathVariable String name){
+        return companyListCardService.findByName(name);
+    }
 }

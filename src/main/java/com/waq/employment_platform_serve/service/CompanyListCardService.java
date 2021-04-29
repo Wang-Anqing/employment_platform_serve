@@ -8,4 +8,5 @@ import java.util.List;
 public interface CompanyListCardService {
     List<CompanyListCard> getList();
     List<CompanyListCard> findByKeyword(String keyword);
+    List<CompanyListCard> findByName(String name);
 }
