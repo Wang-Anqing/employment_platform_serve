@@ -53,4 +53,9 @@ public class WebInitController {
     public List<CompanyListCard>list(@PathVariable String name){
         return companyListCardService.findByName(name);
     }
+//    首页推荐列表根据tag查找
+    @GetMapping("/search/recomCard/{tag}")
+    public List<RecomCard>recomCardList(@PathVariable String tag){
+        return recomCardService.findByTag(tag);
+    }
 }

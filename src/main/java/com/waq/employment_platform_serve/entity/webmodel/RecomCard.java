@@ -11,4 +11,5 @@ public class RecomCard {
     private String isNew;// 是否为new
     private String postSrc;// 海报src
     private Integer viewer;// 浏览人数
+    private String tag;//公司标签
 }

@@ -9,7 +9,24 @@
                is_hot isHot,
                is_new isNew,
                post_src postSrc,
-               viewer
+               viewer,
+               tag
         FROM v_company_recom_post
+    </select>
+
+<!--    根据标签查找信息-->
+    <select id="findByTag" resultType="com.waq.employment_platform_serve.entity.webmodel.RecomCard">
+        SELECT id,
+               name,
+               des,
+               is_hot isHot,
+               is_new isNew,
+               post_src postSrc,
+               viewer,
+               tag
+        FROM v_company_recom_post
+        <where>
+            tag like concat('%',#{tag},'%')
+        </where>
     </select>
 </mapper>

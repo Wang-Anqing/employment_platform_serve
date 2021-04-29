@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RecomCardService {
     List<RecomCard> cardList();
+    List<RecomCard> findByTag(String tag);
 }

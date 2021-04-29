@@ -18,4 +18,9 @@ public class RecomCardServiceImpl implements RecomCardService {
     public List<RecomCard> cardList() {
         return this.recomCardMapper.cardList();
     }
+
+    @Override
+    public List<RecomCard> findByTag(String tag) {
+        return recomCardMapper.findByTag(tag);
+    }
 }
