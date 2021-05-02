@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.RankListMapper">
+    <!--    查询热搜榜-->
+    <select id="getViewerList" resultType="com.waq.employment_platform_serve.entity.webmodel.RankList">
+        SELECT id,
+               name,
+               is_hot isHot,
+               is_new isNew,
+               viewer heat
+        FROM v_viewerlist
+    </select>
+    <!--    查询热投榜-->
+    <select id="getDeliverList" resultType="com.waq.employment_platform_serve.entity.webmodel.RankList">
+        SELECT id,
+               name,
+               is_hot isHot,
+               is_new isNew,
+               deliver heat
+        FROM v_deliverlist
+    </select>
+    <!--    查询活跃榜-->
+    <select id="getActivityList" resultType="com.waq.employment_platform_serve.entity.webmodel.RankList">
+        SELECT id,
+               name,
+               is_hot isHot,
+               is_new isNew,
+               activity heat
+        FROM v_activitylist
+    </select>
+</mapper>
