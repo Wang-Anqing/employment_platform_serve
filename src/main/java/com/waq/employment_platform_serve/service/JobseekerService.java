@@ -28,4 +28,7 @@ public interface JobseekerService extends IService<Jobseeker> {
 
     //注册用户
     boolean addUser(Jobseeker jobseeker);
+
+    //更新用户个人信息
+    boolean updateUser(Jobseeker jobseeker);
 }

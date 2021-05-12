@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.ResumeMapper">
+<!--    获取用户的全部简历信息-->
+    <select id="getList" resultType="com.waq.employment_platform_serve.entity.Resume">
+        select * from resume
+        <where>
+            jobseeker_id = #{jobseekerId}
+        </where>
+    </select>
+    
+<!--    更新简历信息-->
+    <update id="updateResume">
+        update resume
+        <set>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="updateTime != null ">
+                update_time = #{updateTime},
+            </if>
+            <if test="photo != null and photo != ''">
+                photo = #{photo},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="phone != null and phone != ''">
+                phone = #{phone},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="location != null and location != ''">
+                location = #{location},
+            </if>
+            <if test="nation != null and nation != ''">
+                photo = #{photo},
+            </if>
+            <if test="politicalStatus != null and politicalStatus != ''">
+                political_status = #{politicalStatus},
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex},
+            </if>
+            <if test="birthday != null ">
+                birthday = #{birthday},
+            </if>
+            <if test="job != null and job != ''">
+                job = #{job},
+            </if>
+            <if test="wage != null and wage != ''">
+                wage = #{wage},
+            </if>
+            <if test="school != null and school != ''">
+                school = #{school},
+            </if>
+            <if test="profession != null and profession != ''">
+                profession = #{profession},
+            </if>
+            <if test="academy != null and academy != ''">
+                academy = #{academy},
+            </if>
+            <if test="background != null and background != ''">
+                background = #{background},
+            </if>
+            <if test="eduExpress != null and eduExpress != ''">
+                edu_express = #{eduExpress},
+            </if>
+            <if test="skill != null and skill != ''">
+                skill = #{skill},
+            </if>
+            <if test="program1Name != null and program1Name != ''">
+                program1_name = #{program1Name},
+            </if>
+            <if test="program1Role != null and program1Role != ''">
+                program1_role = #{program1Role},
+            </if>
+            <if test="program1Express != null and program1Express != ''">
+                program1_express = #{program1Express},
+            </if>
+            <if test="program2Name != null and program2Name != ''">
+                program2_name = #{program2Name},
+            </if>
+            <if test="program2Role != null and program2Role != ''">
+                program2_role = #{program2Role},
+            </if>
+            <if test="program2Express != null and program2Express != ''">
+                program2_express = #{program2Express},
+            </if>
+            <if test="schoolexp1Name != null and schoolexp1Name != ''">
+                schoolExp1_name = #{schoolexp1Name},
+            </if>
+            <if test="schoolexp1Role != null and schoolexp1Role != ''">
+                schoolExp1_role = #{schoolexp1Role},
+            </if>
+            <if test="schoolexp1Express != null and schoolexp1Express != ''">
+                schoolExp1_express = #{schoolexp1Express},
+            </if>
+            <if test="schoolexp2Name != null and schoolexp2Name != ''">
+                schoolExp2_name = #{schoolexp2Name},
+            </if>
+            <if test="schoolexp2Role != null and schoolexp2Role != ''">
+                schoolExp2_role = #{schoolexp2Role},
+            </if>
+            <if test="schoolexp2Express != null and schoolexp2Express != ''">
+                schoolExp2_express = #{schoolexp2Express},
+            </if>
+            <if test="others != null and others != ''">
+                others = #{others},
+            </if>
+            <if test="conclusion != null and conclusion != ''">
+                conclusion = #{conclusion}
+            </if>
+        </set>
+            where id = #{id}
+    </update>
+</mapper>

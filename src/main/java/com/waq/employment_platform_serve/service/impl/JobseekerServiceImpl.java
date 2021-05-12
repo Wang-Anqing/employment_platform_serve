@@ -71,4 +71,9 @@ public class JobseekerServiceImpl extends ServiceImpl<JobseekerMapper, Jobseeker
         }
     }
 
+    @Override
+    public boolean updateUser(Jobseeker jobseeker) {
+        return jobseekerMapper.updateUser(jobseeker);
+    }
+
 }

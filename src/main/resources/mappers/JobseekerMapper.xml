@@ -29,4 +29,35 @@
             #{password}
                        )
     </insert>
+<!--    更新用户个人信息-->
+    <update id="updateUser">
+        update jobseeker
+        <set>
+            <if test="password!=null and password!=''">
+                password = #{password},
+            </if>
+            <if test="nickname!=null and nickname!=''">
+                nickname = #{nickname},
+            </if>
+            <if test="headerSrc!=null and headerSrc!=''">
+                header_src = #{headerSrc},
+            </if>
+            <if test="school!=null and school!=''">
+                school = #{school},
+            </if>
+            <if test="position!=null and position!=''">
+                position = #{position},
+            </if>
+            <if test="qualification!=null and qualification!=''">
+                qualification = #{qualification},
+            </if>
+            <if test="docSrc!=null and docSrc!=''">
+                doc_src = #{docSrc},
+            </if>
+            <if test="status!=null and status!=''">
+                status = #{status}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper>

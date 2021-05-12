@@ -25,6 +25,9 @@ public interface JobseekerMapper extends BaseMapper<Jobseeker> {
     //通过主键id查询
     Jobseeker findById(int id);
 
-//    注册用户
+    //注册用户
     void addUser (Jobseeker jobseeker);
+
+    //更改用户个人信息
+    boolean updateUser (Jobseeker jobseeker);
 }

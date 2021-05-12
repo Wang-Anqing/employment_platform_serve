@@ -66,5 +66,8 @@ import lombok.EqualsAndHashCode;
      */
       private String docSrc;
 
-
+      /**
+       * 用户是否删除
+       * **/
+      private String status;
 }
