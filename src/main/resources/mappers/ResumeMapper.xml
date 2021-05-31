@@ -115,4 +115,103 @@
         </set>
             where id = #{id}
     </update>
+
+<!--    创建新的简历-->
+    <insert id="addResume" useGeneratedKeys="true" keyProperty="id">
+        insert into resume(
+            title,
+            update_time,
+            jobseeker_id,
+            photo,
+            name,
+            phone,
+            email,
+            location,
+            nation,
+        political_status,
+            sex,
+            birthday,
+            job,
+            wage,
+            school,
+            profession,
+            academy,
+            background,
+            edu_express,
+            skill,
+            program1_name,
+            program1_role,
+            program1_express,
+            <if test="program2Name!=null and program2Name!=''">
+                program2_name,
+            </if>
+            <if test="program2Role!=null and program2Role!=''">
+                program2_role,
+            </if>
+            <if test="program2Express!=null and program2Express !=''">
+                program2_express,
+            </if>
+        schoolExp1_name,
+        schoolExp1_role,
+        schoolExp1_express,
+            <if test="schoolexp2Name != null and schoolexp2Name != ''">
+            schoolExp2_name,
+            </if>
+            <if test="schoolexp2Role != null and schoolexp2Role !=''">
+            schoolExp2_role,
+            </if>
+            <if test="schoolexp2Express != null and schoolexp2Express !=''">
+            schoolExp2_express,
+            </if>
+            others,
+            conclusion
+        )values(
+                #{title},
+                #{updateTime},
+                #{jobseekerId},
+                #{photo},
+                #{name},
+                #{phone},
+                #{email},
+                #{location},
+                #{nation},
+                #{politicalStatus},
+                #{sex},
+                #{birthday},
+                #{job},
+                #{wage},
+                #{school},
+                #{profession},
+                #{academy},
+                #{background},
+                #{eduExpress},
+                #{skill},
+                #{program1Name},
+                #{program1Role},
+                #{program1Express},
+        <if test="program2Name!=null and program2Name!=''">
+            #{program2Name},
+        </if>
+        <if test="program2Role!=null and program2Role!=''">
+            #{program2Role},
+        </if>
+        <if test="program2Express!=null and program2Express !=''">
+            #{program2Express},
+        </if>
+                #{schoolexp1Name},
+                #{schoolexp1Role},
+                #{schoolexp1Express},
+        <if test="schoolexp2Name != null and schoolexp2Name != ''">
+            #{schoolexp2Name},
+        </if>
+        <if test="schoolexp2Role != null and schoolexp2Role !=''">
+            #{schoolexp2Role},
+        </if>
+        <if test="schoolexp2Express != null and schoolexp2Express !=''">
+            #{schoolexp2Express},
+        </if>
+                #{others},
+                #{conclusion}
+               )
+    </insert>
 </mapper>

@@ -17,7 +17,7 @@ public class RegisterController {
 
     @Autowired
     JobseekerServiceImpl jobseekerService;
-
+    //用户注册
     @PostMapping("/jobseeker")
     public boolean register(@RequestBody Jobseeker jobseeker, HttpServletRequest request, HttpServletResponse response){
         System.out.println();

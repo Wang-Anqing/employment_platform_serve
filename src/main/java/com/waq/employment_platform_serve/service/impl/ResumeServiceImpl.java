@@ -33,4 +33,9 @@ public class ResumeServiceImpl extends ServiceImpl<ResumeMapper, Resume> impleme
         return resumeMapper.updateResume(resume);
     }
 
+    @Override
+    public boolean addResume(Resume resume) {
+        return resumeMapper.addResume(resume);
+    }
+
 }

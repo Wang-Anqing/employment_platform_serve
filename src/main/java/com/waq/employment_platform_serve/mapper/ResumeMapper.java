@@ -19,4 +19,6 @@ public interface ResumeMapper extends BaseMapper<Resume> {
     List<Resume> getList (Integer id);
     //跟新简历信息
     boolean updateResume (Resume resume);
+    //新增简历
+    boolean addResume (Resume resume);
 }

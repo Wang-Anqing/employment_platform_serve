@@ -18,4 +18,6 @@ public interface ResumeService extends IService<Resume> {
     List<Resume> getList(Integer jobseekerId);
     //更新简历信息
     boolean updateResume(Resume resume);
+    //新增建立
+    boolean addResume (Resume resume);
 }
