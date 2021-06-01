@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.VSendResumeMapper">
+    <select id="getInfo" resultType="com.waq.employment_platform_serve.entity.webmodel.VSendResume">
+        SELECT * FROM v_send_resume
+        <where>
+            jobseeker_id = #{jobseekerId}
+        </where>
+    </select>
+</mapper>
