@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.ReplyMapper">
+<!--    根据主贴id进行查询回帖-->
+    <select id="getReply" resultType="com.waq.employment_platform_serve.entity.Reply">
+        SELECT * FROM reply
+        <where>
+            discuss_id = #{discussId}
+        </where>
+    </select>
+<!--    发布回帖-->
+    <insert id="addReply">
+        insert into reply (
+                            user_id,
+                           user_name,
+                           user_header,
+                           discuss_id,
+                           content,
+                           date
+        ) values (
+            #{userId},
+                  #{userName},
+                  #{userHeader},
+                  #{discussId},
+                  #{content},
+                  #{date}
+        )
+    </insert>
+</mapper>

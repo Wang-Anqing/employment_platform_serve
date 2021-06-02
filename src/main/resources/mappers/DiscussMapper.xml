@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.DiscussMapper">
+<!--   获取全部帖子信息-->
+    <select id="getAllDiscuss" resultType="com.waq.employment_platform_serve.entity.Discuss">
+        SELECT * FROM discuss
+    </select>
+<!--    根据帖子分类进行查找-->
+    <select id="getByType" resultType="com.waq.employment_platform_serve.entity.Discuss">
+        SELECT * FROM discuss
+        <where>
+            type = #{type}
+        </where>
+    </select>
+<!--    更新帖子内容-->
+    <update id="updateDiscuss">
+        update discuss
+        <set>
+            <if test="likes != null and likes != ''">
+                likes = #{likes},
+            </if>
+            <if test="viewer != null and viewer != ''">
+                viewer = #{viewer}
+            </if>
+        </set>
+            where id = #{id}
+    </update>
+<!--    发布帖子-->
+    <insert id="addDiscuss">
+        insert into discuss(
+            user_id,
+            user_header,
+            user_name,
+            title,
+            content,
+            likes,
+            viewer,
+            date,
+            type,
+            status
+        ) values (
+                  #{userId},
+                  #{userHeader},
+                  #{userName},
+                  #{title},
+                  #{content},
+                  #{likes},
+                  #{viewer},
+                  #{date},
+                  #{type},
+                  #{status}
+                         )
+    </insert>
+</mapper>

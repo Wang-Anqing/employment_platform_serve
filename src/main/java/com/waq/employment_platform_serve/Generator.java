@@ -39,7 +39,7 @@ public class Generator {
         autoGenerator.setPackageInfo(packageConfig);
         //策略配置
         StrategyConfig strategyConfig = new StrategyConfig();
-        strategyConfig.setInclude("v_wage_share");//表名 要对哪些表进行代码生成
+        strategyConfig.setInclude("reply");//表名 要对哪些表进行代码生成
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setEntityLombokModel(true);
