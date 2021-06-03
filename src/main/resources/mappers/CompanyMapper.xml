@@ -14,4 +14,97 @@
         update company set viewer = viewer + 1
         where id = #{companyId}
     </update>
+
+<!--    根据邮箱查询企业信息-->
+    <select id="findByEmail" resultType="com.waq.employment_platform_serve.entity.Company">
+        SELECT * FROM company
+        <where>
+            email = #{email} AND status = '1'
+        </where>
+    </select>
+
+<!--    更新招聘单位信息-->
+    <update id="updateCompany">
+        update company
+        <set>
+            <if test="number!=null and number!=''">
+                number = #{number},
+            </if>
+            <if test="password != null and password != ''">
+                password = #{password},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="des != null and des !=''">
+                des = #{des},
+            </if>
+            <if test="logSrc != null and logoSrc != ''">
+                logo_src = #{logoSrc},
+            </if>
+            <if test="postSrc !=null and postSrc != ''">
+                post_src = #{postSrc},
+            </if>
+            <if test="introduce != null and introduce !=''">
+                introduce = #{introduce},
+            </if>
+            <if test="benefit != null and benefit !=''">
+                benefit = #{benefit},
+            </if>
+            <if test="request != null and request !=''">
+                request = #{request},
+            </if>
+            <if test="recomStartDate != null and recomStartDate != ''">
+                recom_start_date = #{recomStartDate},
+            </if>
+            <if test="recomEndDate != null and recomEndDate != ''">
+                recom_end_date = #{recomEndDate},
+            </if>
+            <if test="applyEndDate != null and applyEndDate != ''">
+                apply_end_date = #{applyEndDate},
+            </if>
+            <if test="applyStartDate !=null and applyStartDate != ''">
+                apply_start_date = #{applyStartDate},
+            </if>
+            <if test="writtenStartDate != null and writtenStartDate !=''">
+                written_start_date = #{writtenStartDate},
+            </if>
+            <if test="writtenEndDate != null and writtenEndDate !=''">
+                written_end_date = #{writtenEndDate},
+            </if>
+            <if test="interviewStartDate != null and interviewStartDate != ''">
+                interview_start_date = #{interviewStartDate},
+            </if>
+            <if test="interviewEndDate != null and interviewEndDate !=''">
+                interview_end_date = #{interviewEndDate},
+            </if>
+            <if test="offerStartDate != null and offerStartDate != ''">
+                offer_start_date = #{offerStartDate},
+            </if>
+            <if test="offerEndDate != null and offerEndDate!= ''">
+                offer_end_date = #{offerEndDate},
+            </if>
+            <if test="tag != null and tag != ''">
+                tag = #{tag}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+<!--    新增招聘单位-->
+    <insert id="addCompany">
+        insert into company(
+                            number,
+                            password,
+                            name,
+                            email,
+                            des
+        )values (
+                 #{nummber},
+                 #{password},
+                 #{name},
+                 #{email},
+                 #{des}
+                        )
+    </insert>
 </mapper>

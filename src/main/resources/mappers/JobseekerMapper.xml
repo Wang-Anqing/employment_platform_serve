@@ -27,7 +27,7 @@
         )values(
             #{email},
             #{password}
-                       )
+            )
     </insert>
 <!--    更新用户个人信息-->
     <update id="updateUser">

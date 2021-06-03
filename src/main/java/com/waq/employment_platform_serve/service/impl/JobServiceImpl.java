@@ -28,4 +28,9 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements JobSe
     public List<Job> findByCompanyId(int companyId) {
         return jobMapper.findByCompanyId(companyId);
     }
+
+    @Override
+    public boolean addJob(Job job) {
+        return jobMapper.addJob(job);
+    }
 }

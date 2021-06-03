@@ -17,4 +17,6 @@ public interface JobMapper extends BaseMapper<Job> {
 
     //通过公司id查出所有对应的工作信息
     List<Job>findByCompanyId(int companyId);
+//    新增工作
+    boolean addJob(Job job);
 }

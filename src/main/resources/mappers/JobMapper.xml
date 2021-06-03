@@ -20,4 +20,47 @@
             id = #{companyId}
         </where>
     </select>
+<!--    新发布工作-->
+    <insert id="addJob">
+        insert into job(
+            company_id,
+            name,
+            duty,
+            request,
+            location,
+            account,
+            start_date,
+            end_date
+        )values (
+                    #{companyId},
+                    #{name},
+                    #{duty},
+                    #{request},
+                    #{location},
+                    #{account},
+                    #{startDate},
+                    #{endDate}
+                )
+    </insert>
+<!--    修改工作信息-->
+    <update id="updateJob">
+        update job
+        <set>
+            <if test="name != null and name !=''">
+                duty = #{duty},
+            </if>
+            <if test="request != null and request !=''">
+                request = #{request},
+            </if>
+            <if test="location != null and location !=''">
+                location = #{location},
+            </if>
+            <if test="account != null and account != ''">
+                account = #{account},
+            </if>
+            <if test="endDate != null and endDate !=''">
+                end_date = #{endDate}
+            </if>
+        </set>
+    </update>
 </mapper>

@@ -2,6 +2,7 @@ package com.waq.employment_platform_serve.controller;
 
 
 import com.waq.employment_platform_serve.entity.Company;
+import com.waq.employment_platform_serve.entity.Jobseeker;
 import com.waq.employment_platform_serve.service.impl.CompanyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,22 @@ public class CompanyController {
     public boolean updateViewer(@PathVariable Integer companyId){
         companyService.updateViewer(companyId);
         return true;
+    }
+
+    @PostMapping("/company/login")
+    public Company login(@RequestBody Company company, HttpServletRequest request, HttpServletResponse response){
+
+        //通过邮箱和密码作为条件查询数据库，若返回结果不为空登陆成功
+        if (companyService.checkLogin(company.getEmail(),company.getPassword())){
+            Company company1 = companyService.findByEmail(company.getEmail());
+            System.out.println("用户返回成功");
+            return company1;
+        }
+        else {
+            response.setStatus(403);
+            System.out.println("用户返回失败");
+            return null;
+        }
     }
 }
 

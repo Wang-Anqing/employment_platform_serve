@@ -17,4 +17,12 @@ public interface CompanyService extends IService<Company> {
     Company findById(int id);
 //    更新浏览人数
     boolean updateViewer(int companyId);
+//    根据Email查找信息
+    Company findByEmail(String email);
+//    核对登录信息并登录
+    boolean checkLogin(String email,String password);
+//    更新公司信息
+    boolean updateCompany(Company company);
+    //    新增招聘单位
+    boolean addCompany (Company company);
 }

@@ -31,4 +31,41 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> impl
         this.companyMapper.updateViewer(companyId);
         return true;
     }
+
+    @Override
+    public Company findByEmail(String email) {
+        return companyMapper.findByEmail(email);
+    }
+
+    @Override
+    public boolean checkLogin(String email, String password) {
+        Company company = companyMapper.findByEmail(email);
+        System.out.println("email为："+email);
+        System.out.println("password为："+password);
+        System.out.println("companyServiceImpl为：");
+        System.out.println(company);
+
+        if (company == null){
+            System.out.println("未查询到!!!");
+            return false;
+        }else if (company.getPassword().equals(password) && company.getEmail().equals(email)){
+            return true;
+        }
+        else{
+            System.out.println("这里错了！！！");
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateCompany(Company company) {
+        return companyMapper.updateCompany(company);
+    }
+
+    @Override
+    public boolean addCompany(Company company) {
+        return companyMapper.addCompany(company);
+    }
+
+
 }

@@ -16,4 +16,10 @@ public interface CompanyMapper extends BaseMapper<Company> {
     Company findById(int id);
 //    更新浏览人数
     void updateViewer(int companyId);
+//    根据email查询企业信息
+    Company findByEmail(String email);
+//    更新公司信息
+    boolean updateCompany (Company company);
+//    新增招聘单位
+    boolean addCompany (Company company);
 }
