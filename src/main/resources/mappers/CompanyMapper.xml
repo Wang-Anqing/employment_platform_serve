@@ -39,7 +39,7 @@
             <if test="des != null and des !=''">
                 des = #{des},
             </if>
-            <if test="logSrc != null and logoSrc != ''">
+            <if test="logoSrc != null and logoSrc != ''">
                 logo_src = #{logoSrc},
             </if>
             <if test="postSrc !=null and postSrc != ''">

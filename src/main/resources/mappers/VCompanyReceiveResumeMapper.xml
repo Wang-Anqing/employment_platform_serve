@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waq.employment_platform_serve.mapper.VCompanyReceiveResumeMapper">
+<!--    根据companyId进行投递记录查询-->
+    <select id="getByCompanyId" resultType="com.waq.employment_platform_serve.entity.webmodel.VCompanyReceiveResume">
+        select * from v_company_receive_resume
+        <where>
+            company_id = #{companyId}
+        </where>
+    </select>
+</mapper>

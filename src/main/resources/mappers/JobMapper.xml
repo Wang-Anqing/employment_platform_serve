@@ -46,7 +46,7 @@
     <update id="updateJob">
         update job
         <set>
-            <if test="name != null and name !=''">
+            <if test="duty != null and duty !=''">
                 duty = #{duty},
             </if>
             <if test="request != null and request !=''">
@@ -58,9 +58,9 @@
             <if test="account != null and account != ''">
                 account = #{account},
             </if>
-            <if test="endDate != null and endDate !=''">
-                end_date = #{endDate}
-            </if>
         </set>
+        <where>
+            id = #{id}
+        </where>
     </update>
 </mapper>

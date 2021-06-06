@@ -1,6 +1,7 @@
 package com.waq.employment_platform_serve.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import com.waq.employment_platform_serve.entity.Company;
 import com.waq.employment_platform_serve.entity.Jobseeker;
 import com.waq.employment_platform_serve.service.impl.CompanyServiceImpl;
@@ -56,6 +57,16 @@ public class CompanyController {
             System.out.println("用户返回失败");
             return null;
         }
+    }
+
+//    更新企业信息
+    @PostMapping("/company/update")
+    public boolean updateCompany(@RequestBody String data){
+        System.out.println("data is :");
+        System.out.println(data);
+        Company company = JSON.parseObject(data,Company.class);
+        companyService.updateCompany(company);
+        return true;
     }
 }
 

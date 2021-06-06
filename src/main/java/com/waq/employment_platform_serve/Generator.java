@@ -39,7 +39,7 @@ public class Generator {
         autoGenerator.setPackageInfo(packageConfig);
         //策略配置
         StrategyConfig strategyConfig = new StrategyConfig();
-        strategyConfig.setInclude("company");//表名 要对哪些表进行代码生成
+        strategyConfig.setInclude("v_company_receive_resume");//表名 要对哪些表进行代码生成
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setEntityLombokModel(true);

@@ -33,4 +33,10 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements JobSe
     public boolean addJob(Job job) {
         return jobMapper.addJob(job);
     }
+
+    @Override
+    public boolean updateJob(Job job) {
+        jobMapper.updateJob(job);
+        return true;
+    }
 }

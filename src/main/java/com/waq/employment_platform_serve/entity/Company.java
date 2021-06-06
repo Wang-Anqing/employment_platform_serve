@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -85,52 +87,52 @@ import lombok.EqualsAndHashCode;
       /**
      * 内推起始时间
      */
-      private LocalDateTime recomStartDate;
+      private String recomStartDate;
 
       /**
      * 内推结束时间
      */
-      private LocalDateTime recomEndDate;
+      private String recomEndDate;
 
       /**
      * 网申起始时间
      */
-      private LocalDateTime applyStartDate;
+      private String applyStartDate;
 
       /**
      * 网申结束时间
      */
-      private LocalDateTime applyEndDate;
+      private String applyEndDate;
 
       /**
      * 笔试开始时间
      */
-      private LocalDateTime writtenStartDate;
+      private String writtenStartDate;
 
       /**
      * 笔试结束时间
      */
-      private LocalDateTime writtenEndDate;
+      private String writtenEndDate;
 
       /**
      * 面试开始时间
      */
-      private LocalDateTime interviewStartDate;
+      private String interviewStartDate;
 
       /**
      * 面试结束时间
      */
-      private LocalDateTime interviewEndDate;
+      private String interviewEndDate;
 
       /**
      * offer开始时间
      */
-      private LocalDateTime offerStartDate;
+      private String offerStartDate;
 
       /**
      * offer结束时间 
      */
-      private LocalDateTime offerEndDate;
+      private String offerEndDate;
 
       /**
      * 是否通过资质认证 0未通过 1通过

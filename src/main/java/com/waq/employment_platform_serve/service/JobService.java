@@ -19,4 +19,6 @@ public interface JobService extends IService<Job> {
     List<Job> findByCompanyId(int companyId);
     //    新增工作
     boolean addJob(Job job);
+//    更新工作信息
+    boolean updateJob(Job job);
 }

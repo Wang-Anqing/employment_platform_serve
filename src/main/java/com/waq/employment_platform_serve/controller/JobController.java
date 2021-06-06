@@ -53,6 +53,19 @@ public class JobController {
         System.out.println(jobList);
         return jobList;
     }
+//  新增工作
+    @PostMapping("/job/add")
+    public boolean addJob(@RequestBody Job job){
+        jobService.addJob(job);
+        return true;
+    }
+
+//    更新工作信息
+    @PostMapping("/job/update")
+    public boolean updateJob(@RequestBody Job job){
+        jobService.updateJob(job);
+        return true;
+    }
 
 //    人岗匹配
     @PostMapping("/match")
